@@ -1,0 +1,288 @@
+// variables colors
+$black: #192127;
+$blue: #2C9CF2;
+$red: #E25D43;
+$white: #fff;
+$grey-1: #72797e; // Darkest grey
+$grey-2: #afbac4;
+$grey-3: #bbc1c6;
+$grey-4: #e3e5e9;
+$grey-5: #f7f9fc; // Lightest gray
+
+// Sizes
+$base-line-height: 1.6;
+$pulse: $base-line-height * 1rem;
+
+/* ================================
+ * Banner Styleguide
+ * ================================ */
+
+.banner {
+ border-bottom: 1px solid $grey-2;
+}
+
+.global-header .content-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.global-header .logo {
+  flex: 1 0 auto;
+}
+
+/* ================================
+ * Color section
+ * =============================== */
+
+.colors {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 ($pulse * 4);
+}
+
+.color-box {
+  margin: 0 ($pulse * 2) ($pulse * 2) 0;
+}
+
+.color-box__rectangle {
+  width: 12em;
+  height: 6em;
+}
+
+.color-box--blue {
+  background-color: $blue;
+}
+
+.color-box--black {
+  background-color: $black;
+}
+
+.color-box--grey-1 {
+  background-color: $grey-1;
+}
+
+.color-box--grey-2 {
+  background-color: $grey-2;
+}
+
+.color-box--grey-3 {
+  background-color: $grey-3;
+}
+
+.color-box--grey-4 {
+  background-color: $grey-4;
+}
+
+.color-box--grey-5 {
+  background-color: $grey-5;
+}
+
+.color-box--red {
+  background-color: $red;
+}
+
+/* ================================
+ * Logo section
+ * =============================== */
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .logo-box {
+    flex: 1 0 auto;
+    min-width: ($pulse * 20);
+    margin: 0 ($pulse * 4) ($pulse * 2) 0;
+  }
+}
+
+.logo--logos-header {
+  padding: 4.8em 0 4.8em 0.5em;
+  border: 1px solid $grey-4;
+}
+
+
+/* ================================
+ * Typography section
+ * =============================== */
+
+// Deleting all standard header margins in order to style the table
+ .typography {
+   h1, h2, h3, h4, h5, h6, p {
+   margin: 0;
+   }
+ }
+
+// Styling the header of the table
+ th {
+   font-size: 1.3em;
+   text-transform: uppercase;
+ }
+
+// Styling the content of the table without first children
+ tr td:not(:first-child) {
+   font-size: 1.5em;
+ }
+
+//Styling the first table
+.small-table {
+  table, th, td {
+    border-bottom: none;
+    text-align: left;
+  }
+
+  td {
+    color: $black;
+  }
+
+  .glyph {
+    font-size: 10em;
+    padding-right: 0.5em;
+  }
+}
+
+//styling the second table
+.large-table {
+  border-collapse: collapse;
+  width: 100%;
+
+   table, th, td {
+     border-bottom: 1px solid $grey-3;
+   }
+   th, td {
+     height: 6em;
+     padding-left: 5em;
+     text-align: left;
+   }
+
+ th:first-child, td:first-child {
+     padding: 0;
+ }
+
+ th {
+    height: 0;
+ }
+
+}
+
+@media only screen and (max-width: 650px) {
+
+.large-table th, .large-table td:not(:first-child) {
+  display: none;
+}
+
+.large-table {
+  table, th, td {
+  border: none;
+}
+  .action-button {
+    height: 4.6em;
+  }
+}
+}
+
+/* ================================
+ * Links section
+ * =============================== */
+
+ .link {
+   display: flex;
+   flex-wrap: wrap;
+ }
+
+ .link a {
+   margin: 0 0 ($pulse * 2) 0;
+ }
+
+.link-box {
+  min-width: ($pulse * 20);
+}
+
+/* ================================
+ * Buttons section
+ * =============================== */
+
+ .buttons {
+   display: flex;
+   flex-wrap: wrap;
+   .btn-box {
+     min-width: ($pulse * 20);
+     margin: 0 0 ($pulse * 2) 0;
+   }
+   .btn-box-default {
+     display: flex;
+   }
+   .btn:first-child {
+     margin-right: 1em;
+   }
+ }
+
+ /* ================================
+  * Buttons section
+  * =============================== */
+
+.forms form {
+   margin: 0 0 ($pulse * 2) 0;
+ }
+
+
+/* ================================
+* Avatars section
+* =============================== */
+
+.avatar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.avatar-box {
+  flex-direction: column;
+  min-width: ($pulse * 20);
+  margin: 0 0 ($pulse * 2) 0;
+}
+
+/* ================================
+* Icons
+* =============================== */
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.icon-box {
+  margin: 0 ($pulse * 2) ($pulse * 2) 0;
+}
+
+/* ================================
+ * Molecules: Glob Nav section
+ * =============================== */
+
+.glob-nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.glob-nav ul {
+  display: flex;
+  align-items: center;
+  height: 3em;
+  min-width: ($pulse * 20);
+  margin: 0 ($pulse * 2) 0 0;
+}
+
+.glob-nav-box {
+  margin: 0 0 ($pulse * 2);
+}
+
+/* ================================
+ * Molecules: Comment section
+ * =============================== */
+
+ .comment-box {
+   margin-bottom: ($pulse * 2);
+ }

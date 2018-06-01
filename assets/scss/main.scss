@@ -1,0 +1,605 @@
+/* ================================
+ * SCSS
+ * ================================ */
+
+// variables colors
+$black: #192127;
+$blue: #2C9CF2;
+$red: #E25D43;
+$white: #fff;
+$grey-1: #72797e; // Darkest grey
+$grey-2: #afbac4;
+$grey-3: #bbc1c6;
+$grey-4: #e3e5e9;
+$grey-5: #f7f9fc; // Lightest gray
+
+// Sizes
+$base-line-height: 1.6;
+$pulse: $base-line-height * 1rem;
+
+// mixins
+@mixin tablet {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
+
+
+/* ================================
+ * BASE
+ * ================================ */
+
+html {
+  font-family: "Rubik", helvetica, arial, sans-serif;
+  font-size: 62.5%; /* standard size 16px; 62.5% of 16px = 10px (easier for styling)   */
+  line-height: $base-line-height; /* according to style guide paragraph element */
+  background-color: $white;
+}
+
+body {
+  color: $grey-1;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+ * TYPOGRAPHY
+ * ================================ */
+
+header, article, section {
+  margin-bottom: ($pulse * 4);
+}
+
+p, ul, ol, span, label {
+  font-size: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+  margin: 0 0 ($pulse) 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+h1,
+.alpha {
+  font-size: 4.8em; /* style guide says 48px. with html standard size changed to 10px now easy --- changed to mobiel 3.6em */
+  line-height: 1.2; /* instead of 1.6 as in html */
+  color: $black;
+  margin: 0 0 ($pulse * 3);
+}
+
+@media screen and (min-width: 480px) {
+  h1,
+  .alpha {
+    font-size: 4em;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  h1,
+  .alpha {
+    font-size: 4.8em;
+  }
+}
+
+h2,
+.beta {
+  font-size: 3.6em;
+  line-height: 1.2;
+  color: $black;
+  margin: 0 0 ($pulse * 3);
+}
+
+h3,
+.gamma {
+  font-size: 2.8em;
+  line-height: 1.2;
+  color: $black;
+}
+
+h4,
+.delta {
+  font-size: 1.3em;
+  line-height: 1.5;
+  text-transform: uppercase;
+
+}
+
+h5,
+.epsilon {
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.action-button {
+  font-size: 1.3em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $black;
+}
+
+
+/* ================================
+ * HELPERS
+ * ================================ */
+
+.content-wrapper {
+  max-width: 96em;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.content-wrapper::after { /* this is added to ensure that line remains when we float search and nav elements */
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bare-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sr-only { /*Hide the element visually but show it for screenreaders (sr)*/
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect (0,0,0,0);
+  border: 0;
+}
+
+/* ================================
+ * LOGO
+ * ================================ */
+
+.logo a {
+  text-decoration: none;
+  color: $black;
+}
+
+.logo span {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: $black;
+  white-space: nowrap;
+}
+
+.logo em {
+  font-style: normal;
+  color: $blue;
+}
+.global-footer .logo span {
+  color: $white;
+}
+
+/* ================================
+ * GLOBAL NAVIGATION
+ * ================================ */
+
+ .global-nav li {
+   display: inline-block;
+   margin: 0 0 0 ($pulse * 2);
+ }
+
+ .global-nav li:first-child {
+   margin: 0;
+ }
+
+ .global-nav img {
+   width: 3em;
+   height: 3em;
+ }
+
+/* ================================
+ * GLOBAL NAVIGATION
+ * ================================ */
+
+ .loc-nav {
+  padding-bottom: ($pulse * 2);
+  border-bottom: 1px solid $grey-2;
+
+  & a:active,
+  & a:hover {
+   color: $black;
+   padding-bottom: ($pulse * 2.8);
+   border-bottom: 2px solid $black;
+ }
+}
+
+/* ================================
+ * LINKS
+ * ================================ */
+
+a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.link--header {
+  color: $black;
+}
+
+.link--main {
+  color: $blue;
+}
+
+.link--footer {
+  color: $grey-1;
+}
+
+
+ /* ================================
+  * BUTTONS
+  * ================================ */
+
+ .btn {
+   font-size: 1.3rem;
+   background: $white;
+   color: $black;
+
+   padding: 1.6em;
+   margin: 0;
+
+   border: 1px solid $grey-4;
+   border-radius: 3px;
+
+   text-decoration: none;
+   text-transform: uppercase;
+
+   cursor: pointer;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-align: center;
+       -ms-flex-align: center;
+           align-items: center;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    background-color: $grey-4;
+    color: $blue;
+  }
+ }
+
+ .btn--cta {
+   background-color: $blue;
+   color: $white;
+   border: 1px solid $blue;
+   &:hover,
+   &:active,
+   &:focus {
+     background-color: darken($blue, 20);
+     border-color: darken($blue, 15);
+     color: $white;
+   }
+ }
+
+ .btn--warning {
+   background-color: $red;
+   color: $white;
+   border: 1px solid $red;
+   &:hover,
+   &:active,
+   &:focus {
+     background-color: darken($red, 15);
+     border-color: darken($red, 15);
+     color: $white;
+   }
+ }
+
+   .btn--secondary {
+     background-color: $grey-4;
+     color: $grey-1;
+     border: 1px solid $grey-4;
+     padding: 1em;
+     &:hover,
+     &:active,
+     &:focus {
+       background-color: $blue;
+       border-color: $blue;
+       color: $white;
+     }
+ }
+
+/* ================================
+ * FORMS
+ * ================================ */
+
+ .input {
+   display: flex; //neu
+   align-items: baseline; // neu
+   flex-wrap: wrap; // neu
+   align-content: flex-start;
+   font-size: 1.5rem;
+   color: $grey-1;
+ }
+
+ .input__label { /*In order to be later capaple of controlling margin and padding*/
+   color: $black; //neu
+   font-size: 1.1em; //neu
+   cursor: pointer;
+   min-width: 10em; // neu missing: display: inline-block und margin 0 0 0.5em
+ }
+
+ .input__field {
+   flex: 1 1 auto; // neu
+   background-color: $white;
+   border: 1px solid $grey-4;
+   padding: 1.6em;
+   font-size: inherit; /*Because input fields do normally not inherit font-size*/
+   min-width: 20em; // neu
+   max-width: 30em;
+   box-shadow: 0 0 1em $grey-3; //neu missing margin: 0
+   &:focus {
+     border-color: $blue;
+   }
+ }
+
+ ::placeholder {
+   color: $grey-3;
+   opacity: 1; /* Firefox fix */
+}
+
+ .input__row {
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   & .btn {
+     border-radius: 0;
+     border-left-width: 0; /*since both elements have a border of 1px we remove one*/
+   }
+
+   & .input__field{ /*"targeting input field inside input row..."*/
+     -webkit-box-flex: 1;
+         -ms-flex: 1 0 10em;
+             flex: 1 0 10em;
+   }
+ }
+
+  .input--cta .input__field {
+   border-color: $blue;
+ }
+
+ /* ================================
+  * COMMENTS
+  * ================================ */
+
+.comment-box__made, .comment-box__add {
+  display: flex;
+}
+
+.comment-box__made p {
+  margin: 0 0 $pulse;
+}
+
+.comment-box__made em:first-child {
+  font-style: normal;
+  color: $black;
+}
+
+.comment-box__made em:last-child {
+  font-style: normal;
+  color: $grey-3;
+}
+
+.comment-text {
+  margin-left: ($pulse * 2);
+}
+
+.comment-box__add img {
+  margin-top: ($pulse * 3);
+}
+
+.comment-input form {
+  display: flex;
+  flex-direction: column;
+  margin-left: ($pulse * 2);
+}
+
+.comment-input label {
+  margin-bottom: $pulse;
+}
+
+.comment-input textarea {
+  margin-bottom: $pulse;
+}
+
+.comment-input button {
+  padding: 1.3em ($pulse * 2);
+}
+
+/* ================================
+ * AVATARS
+ * ================================ */
+
+.avatar__picture {
+  height: 6em;
+  border-radius: 100%;
+}
+
+.avatar__sgv {
+  fill: $blue;
+  height: 6em;
+}
+
+
+/* ================================
+ * CARD
+ * =============================== */
+
+.card {
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.14);
+          box-shadow: 0 0 20px rgba(0,0,0,0.14);
+  margin: 0 1.6 1.6 0; /* rem for global */
+  border-radius: 3px;
+
+  display: -webkit-box;
+
+  display: -ms-flexbox;
+
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; /*in order to make the like add buttons stick at the end of the cards...*/
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; /*in order to make space between the two flex elements in the containter (picture and footer)??*/
+
+  font-size: 1rem; /* in relation to body size...*/
+}
+
+.card__thumb {
+  position: relative; /*in combination with .card__intro position absolute so the text is on the picture*/
+  text-decoration: none;
+  color: $white;
+  display: block;
+}
+
+.card__intro {
+  padding: 1.6em; /* em for local */
+  position: absolute;
+  bottom: 0; /* stack to bottom, left and right, this makes the element stretch to full with... ?? */
+  left: 0;
+  right: 0;
+}
+
+.card__title {
+  font-size: 2em;
+  color: $white;
+}
+
+.card__intro span {
+  font-size: 1.3em;
+}
+
+.card__thumb img {
+  width: 100%;
+  display: block; /*this removes the tiny gap between the images and the two buttons because images are inline elements with this gap underneath...*/
+}
+
+.cards::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* --------------------------------
+ * Card footer w/buttons
+ * -------------------------------*/
+
+.card__footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-top: 1px solid $grey-3;
+ }
+
+.card__footer .btn { /*rather than creating a new class I target all buttons in the card footer, they only exist there...*/
+  border: none;
+  border-radius: 0;
+   }
+
+.card__footer .btn--like {
+  border-right: 1px solid $grey-3;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
+  text-align: left;
+}
+
+/* --------------------------------
+ * Card RWD layout / grid
+ * -------------------------------*/
+
+.cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; /*in order that all cards have the same hight...the actual "stretch-property can be left out because it is default setting"*/
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+
+/* Tablets */
+@include tablet {
+  .cards {
+    margin-right: -$pulse;
+  }
+  .cards .card {
+    float: left;
+    width: calc(50% - #{$pulse}); /* direct calculation there is a margin of $pulse in .card */
+  }
+}
+
+
+/* Desktops */
+@include desktop {
+  .cards .card {
+    width: calc(25% - #{$pulse});
+  }
+}
+
+ /* ================================
+  * ICONS
+  * =============================== */
+
+.icon {
+  fill: $grey-1;
+  width: 20px;
+  height: 20px;
+  .btn:hover &,
+  .btn:active &,
+  .btn:focus & {
+   fill: currentColor;
+  }
+ }
+
+ .icon--liked {
+  fill: $red;
+ }
+
+/* ================================
+ * FOOTER
+ * =============================== */
+
+.global-footer {
+  background: $black;
+  color: $grey-3;
+  padding: 4.8rem 0 4.8rem;
+  margin-bottom: 0;
+}
+
+.global-footer .logo {
+  flex: 1 0 auto;
+}
+
+.global-footer a {
+  color: inherit;
+}
+
+.global-footer .content-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0 auto;
+}
