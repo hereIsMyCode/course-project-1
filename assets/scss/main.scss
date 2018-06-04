@@ -56,7 +56,7 @@ header, article, section {
   margin-bottom: ($pulse * 4);
 }
 
-p, ul, ol, span, label {
+p, ul, ol, span {
   font-size: 1.5em;
 }
 
@@ -169,7 +169,7 @@ h5,
 }
 
 .logo span {
-  font-size: 1.2em;
+  font-size: 1.8em;
   font-weight: bold;
   color: $black;
   white-space: nowrap;
@@ -202,7 +202,7 @@ h5,
  }
 
 /* ================================
- * GLOBAL NAVIGATION
+ * LOCAL NAVIGATION
  * ================================ */
 
  .loc-nav {
@@ -212,17 +212,21 @@ h5,
   & a:active,
   & a:hover {
    color: $black;
-   padding-bottom: ($pulse * 2.8);
+   padding-bottom: ($pulse * 3.1);
    border-bottom: 2px solid $black;
  }
 }
+
 
 /* ================================
  * LINKS
  * ================================ */
 
+.link a {
+  font-size: 1.5em;
+}
+
 a {
-  font-size: 1.5rem;
   text-decoration: none;
   cursor: pointer;
 }
@@ -264,12 +268,8 @@ ul {
    text-transform: uppercase;
 
    cursor: pointer;
-   display: -webkit-box;
-   display: -ms-flexbox;
    display: flex;
-   -webkit-box-align: center;
-       -ms-flex-align: center;
-           align-items: center;
+   align-items: center;
 
   &:hover,
   &:active,
@@ -320,68 +320,165 @@ ul {
      }
  }
 
+
+
 /* ================================
  * FORMS
  * ================================ */
 
- .input {
-   display: flex; //neu
-   align-items: baseline; // neu
-   flex-wrap: wrap; // neu
-   align-content: flex-start;
-   font-size: 1.5rem;
-   color: $grey-1;
- }
-
- .input__label { /*In order to be later capaple of controlling margin and padding*/
-   color: $black; //neu
-   font-size: 1.1em; //neu
-   cursor: pointer;
-   min-width: 10em; // neu missing: display: inline-block und margin 0 0 0.5em
- }
-
- .input__field {
-   flex: 1 1 auto; // neu
-   background-color: $white;
-   border: 1px solid $grey-4;
-   padding: 1.6em;
-   font-size: inherit; /*Because input fields do normally not inherit font-size*/
-   min-width: 20em; // neu
-   max-width: 30em;
-   box-shadow: 0 0 1em $grey-3; //neu missing margin: 0
-   &:focus {
-     border-color: $blue;
-   }
- }
-
- ::placeholder {
-   color: $grey-3;
-   opacity: 1; /* Firefox fix */
+.input-group {
+  display: flex; //neu
+  align-items: baseline; // neu
+  flex-wrap: wrap; // neu
+  font-size: 1.5rem;
+  color: $grey-1;
+  margin-bottom: $pulse;
 }
 
- .input__row {
-   display: -webkit-box;
-   display: -ms-flexbox;
-   display: flex;
-   & .btn {
-     border-radius: 0;
-     border-left-width: 0; /*since both elements have a border of 1px we remove one*/
-   }
+.input-group__label { /*In order to be later capaple of controlling margin and padding*/
+  color: $black; //neu
+  cursor: pointer;
+  min-width: 10em;
+  display: inline-block;
+  margin-bottom: ($pulse/2);// neu missing: display: inline-block und margin 0 0 0.5em
+}
 
-   & .input__field{ /*"targeting input field inside input row..."*/
-     -webkit-box-flex: 1;
-         -ms-flex: 1 0 10em;
-             flex: 1 0 10em;
-   }
- }
-
-  .input--cta .input__field {
+.input-group__field {
+  flex: 1 1 auto; // neu
+  background-color: $white;
+  border: 1px solid $grey-4;
+  padding: 1.6em;
+  font-size: inherit; /*Because input fields do normally not inherit font-size*/
+  min-width: 20em; // neu
+  max-width: 35em;
+  box-shadow: 0 0 1em $grey-3; //neu missing margin: 0
+  &:focus {
    border-color: $blue;
+  }
+}
+
+::placeholder {
+ color: $grey-3;
+ opacity: 1; /* Firefox fix */
+}
+
+/* --------------------------------
+ * Forms - Alert
+ * -------------------------------*/
+
+.input__alert {
+  color: $red;
+  margin-bottom: ($pulse/2);
+}
+
+.input-group__field--alert {
+   border-color: $red;
+}
+
+/* --------------------------------
+ * Forms - Checkbox
+ * -------------------------------*/
+
+.input__checkbox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox_container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.checkbox_container {
+  display: flex;
+  align-items: center;
+}
+
+.checkmark {
+    display: inline-block;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    margin-right: $pulse;
+    background-color: $white;
+    border: 1px solid $grey-4;
+    box-shadow: 0 0 1em $grey-3; //neu missing margin: 0
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: relative;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.checkbox_container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.checkbox_container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid $blue;
+    border-width: 0 2px 2px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* --------------------------------
+ * Forms - Input button
+ * -------------------------------*/
+.input-group button {
+  display: inline-block;
+}
+
+.input__button {
+  flex: 1 1 auto; // neu
+  min-width: 20em;
+}
+
+.sign-in {
+  max-width: 60em;
+}
+
+.input__row {
+ display: flex;
+ & .btn {
+   border-radius: 0;
+   border-left-width: 0; /*since both elements have a border of 1px we remove one*/
  }
 
- /* ================================
-  * COMMENTS
-  * ================================ */
+ & .input__field{ /*"targeting input field inside input row..."*/
+           flex: 1 0 10em;
+ }
+}
+
+.input--cta .input-group__field {
+  border-color: $blue;
+}
+
+/* --------------------------------
+ * Forms - Responsive
+ * -------------------------------*/
+
+@media screen and (min-width: 520px) {
+  .input__button, .input__checkbox, .input__alert  {
+    margin-left: 150px;
+  }
+}
+
+/* ================================
+* COMMENTS
+* ================================ */
 
 .comment-box__made, .comment-box__add {
   display: flex;
@@ -389,6 +486,7 @@ ul {
 
 .comment-box__made p {
   margin: 0 0 $pulse;
+  max-width: 39em;
 }
 
 .comment-box__made em:first-child {
@@ -424,7 +522,7 @@ ul {
 }
 
 .comment-input button {
-  padding: 1.3em ($pulse * 2);
+  padding: 1.6em ($pulse * 2);
 }
 
 /* ================================
@@ -447,23 +545,13 @@ ul {
  * =============================== */
 
 .card {
-  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.14);
-          box-shadow: 0 0 20px rgba(0,0,0,0.14);
-  margin: 0 1.6 1.6 0; /* rem for global */
+  box-shadow: 0 0 20px rgba(0,0,0,0.14);
+  margin: 0 1.6rem  1.6rem 0; /* rem for global */
   border-radius: 3px;
 
-  display: -webkit-box;
-
-  display: -ms-flexbox;
-
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; /*in order to make the like add buttons stick at the end of the cards...*/
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between; /*in order to make space between the two flex elements in the containter (picture and footer)??*/
+  flex-direction: column; /*in order to make the like add buttons stick at the end of the cards...*/
+  justify-content: space-between; /*in order to make space between the two flex elements in the containter (picture and footer)??*/
 
   font-size: 1rem; /* in relation to body size...*/
 }
@@ -532,13 +620,9 @@ ul {
  * -------------------------------*/
 
 .cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex; /*in order that all cards have the same hight...the actual "stretch-property can be left out because it is default setting"*/
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
-
 
 /* Tablets */
 @include tablet {
@@ -551,7 +635,6 @@ ul {
   }
 }
 
-
 /* Desktops */
 @include desktop {
   .cards .card {
@@ -559,14 +642,15 @@ ul {
   }
 }
 
- /* ================================
-  * ICONS
-  * =============================== */
+/* ================================
+* ICONS
+* =============================== */
 
 .icon {
   fill: $grey-1;
   width: 20px;
   height: 20px;
+  margin-right: 5px;
   .btn:hover &,
   .btn:active &,
   .btn:focus & {
@@ -577,6 +661,28 @@ ul {
  .icon--liked {
   fill: $red;
  }
+
+/* ================================
+* Goals (copyright)
+* =============================== */
+
+.goal-copyright {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.goal-copyright img {
+  width: 4.5em;
+  height: 4.5em;
+  margin-right: $pulse;
+}
+
+.goal-copyright em {
+  font-style: normal;
+  color: $black;
+}
+
 
 /* ================================
  * FOOTER
