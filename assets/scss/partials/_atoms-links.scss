@@ -1,0 +1,30 @@
+
+/* ================================
+ * ATOMS: Links
+ * ================================ */
+
+.link a {
+  font-size: $base-font-size;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.link--header {
+  color: $black;
+}
+
+.link--main {
+  color: $blue;
+}
+
+.link--footer {
+  color: $grey-1;
+}

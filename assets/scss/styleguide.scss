@@ -1,20 +1,17 @@
-// variables colors
-$black: #192127;
-$blue: #2C9CF2;
-$red: #E25D43;
-$white: #fff;
-$grey-1: #72797e; // Darkest grey
-$grey-2: #afbac4;
-$grey-3: #bbc1c6;
-$grey-4: #e3e5e9;
-$grey-5: #f7f9fc; // Lightest gray
+/* ================================
+ * SCSS: Variables
+ * ================================ */
 
-// Sizes
-$base-line-height: 1.6;
-$pulse: $base-line-height * 1rem;
+ @import "partials/scss-variables";
 
 /* ================================
- * Banner Styleguide
+ * SCSS: Mixins
+ * ================================ */
+
+ @import "partials/scss-mixins";
+
+/* ================================
+ * STYLEGUIDE: Banner
  * ================================ */
 
 .banner {
@@ -32,17 +29,17 @@ $pulse: $base-line-height * 1rem;
 }
 
 /* ================================
- * Color section
+ * STYLEGUIDE: Color section
  * =============================== */
 
 .colors {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 0 ($pulse * 4);
+  margin-bottom: $pulse4;
 }
 
 .color-box {
-  margin: 0 ($pulse * 2) ($pulse * 2) 0;
+  margin: 0 $pulse2 $pulse2 0;
 }
 
 .color-box__rectangle {
@@ -83,7 +80,7 @@ $pulse: $base-line-height * 1rem;
 }
 
 /* ================================
- * Logo section
+ * STYLEGUIDE: Logo section
  * =============================== */
 
 .logos {
@@ -93,8 +90,8 @@ $pulse: $base-line-height * 1rem;
 
   .logo-box {
     flex: 1 0 auto;
-    min-width: ($pulse * 20);
-    margin: 0 ($pulse * 4) ($pulse * 2) 0;
+    min-width: ($pulse1 * 20);
+    margin: 0 $pulse4 $pulse2 0;
   }
 }
 
@@ -103,9 +100,8 @@ $pulse: $base-line-height * 1rem;
   border: 1px solid $grey-4;
 }
 
-
 /* ================================
- * Typography section
+ * STYLEGUIDE: Typography section
  * =============================== */
 
 // Deleting all standard header margins in order to style the table
@@ -123,7 +119,7 @@ $pulse: $base-line-height * 1rem;
 
 // Styling the content of the table without first children
  tr td:not(:first-child) {
-   font-size: 1.5em;
+   font-size: $base-font-size;
  }
 
 //Styling the first table
@@ -148,13 +144,14 @@ $pulse: $base-line-height * 1rem;
   border-collapse: collapse;
   width: 100%;
 
-   table, th, td {
-     border-bottom: 1px solid $grey-3;
-   }
-   th, td {
-     height: 6em;
-     padding-left: 5em;
-     text-align: left;
+  table, th, td {
+    border-bottom: 1px solid $grey-3;
+  }
+
+  th, td {
+    height: 6em;
+    padding-left: 5em;
+    text-align: left;
    }
 
  th:first-child, td:first-child {
@@ -164,27 +161,25 @@ $pulse: $base-line-height * 1rem;
  th {
     height: 0;
  }
-
 }
 
-@media only screen and (max-width: 650px) {
-
-.large-table th, .large-table td:not(:first-child) {
-  display: none;
-}
-
-.large-table {
-  table, th, td {
-  border: none;
-}
-  .action-button {
-    height: 4.6em;
+@include desktop {
+  .large-table th, .large-table td:not(:first-child) {
+    display: none;
   }
-}
+
+  .large-table {
+    table, th, td {
+      border: none;
+    }
+    .action-button {
+    height: 4.6em;
+    }
+  }
 }
 
 /* ================================
- * Links section
+ * STYLEGUIDE: Links section
  * =============================== */
 
  .link {
@@ -193,23 +188,23 @@ $pulse: $base-line-height * 1rem;
  }
 
  .link a {
-   margin: 0 0 ($pulse * 2) 0;
+   margin-bottom: $pulse2;
  }
 
 .link-box {
-  min-width: ($pulse * 20);
+  min-width: ($pulse1 * 20);
 }
 
 /* ================================
- * Buttons section
+ * STYLEGUIDE: Buttons section
  * =============================== */
 
  .buttons {
    display: flex;
    flex-wrap: wrap;
    .btn-box {
-     min-width: ($pulse * 20);
-     margin: 0 0 ($pulse * 2) 0;
+     min-width: ($pulse1 * 20);
+     margin-bottom: $pulse2;
    }
    .btn-box-default {
      display: flex;
@@ -220,16 +215,15 @@ $pulse: $base-line-height * 1rem;
  }
 
 /* ================================
-* Forms section
+* STYLEGUIDE: Forms section
 * =============================== */
 
 .forms form {
-   margin: 0 0 ($pulse * 2) 0;
+   margin-bottom: $pulse2;
  }
 
-
 /* ================================
-* Avatars section
+* STYLEGUIDE: Avatars section
 * =============================== */
 
 .avatar {
@@ -239,12 +233,12 @@ $pulse: $base-line-height * 1rem;
 
 .avatar-box {
   flex-direction: column;
-  min-width: ($pulse * 20);
-  margin: 0 0 ($pulse * 2) 0;
+  min-width: ($pulse1 * 20);
+  margin-bottom: $pulse2;
 }
 
 /* ================================
-* Icons
+* STYLEGUIDE: Icons
 * =============================== */
 
 .icons {
@@ -254,35 +248,23 @@ $pulse: $base-line-height * 1rem;
 }
 
 .icon-box {
-  margin: 0 ($pulse * 2) ($pulse * 2) 0;
+  margin: 0 $pulse2 $pulse2 0;
 }
 
 /* ================================
- * Molecules: Glob Nav section
+ * STYLEGUIDE: Glob Nav section
  * =============================== */
 
-.glob-nav {
+.global-nav {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
 }
 
-.glob-nav ul {
-  display: flex;
-  align-items: center;
-  height: 3em;
-  min-width: ($pulse * 20);
-  margin: 0 ($pulse * 2) 0 0;
-}
-
-.glob-nav-box {
-  margin: 0 0 ($pulse * 2);
-}
-
 /* ================================
- * Molecules: Comment section
+ * STYLEGUIDE: Comment section
  * =============================== */
 
  .comment-box {
-   margin-bottom: ($pulse * 2);
+   margin-bottom: $pulse2;
  }

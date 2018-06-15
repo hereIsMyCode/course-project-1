@@ -1,0 +1,29 @@
+
+/* ================================
+ * ORGANISM: Discussion
+ * ================================ */
+
+.discussion {
+  font-size: 0.8rem;
+
+  h2 {
+    margin: 0 $pulse1 ($pulse1*2) 0;
+  }
+
+  span {
+    color: $grey-3;
+  }
+
+  .title {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .btn {
+    font-size: 1rem;
+  }
+
+  .comment-box__add, .comment-box__made {
+    margin-bottom: $pulse1;
+  }
+}

@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
 <body>
+
 <!-- Sgvs section -->
   <svg style="display:none;">
     <defs>
@@ -39,12 +40,11 @@
       <symbol id="menu">
         <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
       </symbol>
-      <symbol id="search">
+      <symbol id="search-icon">
         <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
       </symbol>
     </defs>
   </svg>
-
 
 <!-- Start header section -->
   <header id="header" class="banner">
@@ -70,8 +70,7 @@
       <h1>Atoms</h1>
 
       <!-- Local navigation -->
-      <section>
-        <aside>
+      <nav>
           <ul>
             <li><a class="link--main" href="#logos">1. Logos</a></li>
             <li><a class="link--main" href="#colors">2. Colors</a></li>
@@ -82,8 +81,7 @@
             <li><a class="link--main" href="#avatars">7. Avatars</a></li>
             <li><a class="link--main" href="#icons">8. Icons</a></li>
           </ul>
-        </aside>
-      </section>
+      </nav>
 
       <!-- Section logos -->
       <section id="logos">
@@ -280,7 +278,7 @@
           <form action="???" method="get">
             <div class="input-group">
               <label class="input-group__label" for="input-textarea">Text area label</label>
-              <textarea class="input-group__field" id="input-textarea" name="textarea" type="text" rows="8" cols"25" placeholder="Placeholder text"></textarea>
+              <textarea class="input-group__field" id="input-textarea" name="textarea" rows="8" cols="25" placeholder="Placeholder text"></textarea>
             </div>
           </form>
         </div>
@@ -292,7 +290,7 @@
         <div class="avatar">
           <div class="avatar-box">
           <h4>Avatar with picture</h4>
-          <img class="avatar__picture" src="assets/images/avatar.jpg" />
+          <img class="avatar__picture" src="assets/images/avatar.jpg" alt="picture of avatar"/>
         </div>
         <div class="avatar-box">
           <h4>Avatar without picture</h4>
@@ -303,6 +301,7 @@
       </div>
       </section>
 
+      <!-- Section icons -->
       <section id="icons">
         <h2>08. Icons</h2>
         <div class="icons">
@@ -357,7 +356,7 @@
           <div class="icon-box">
             <h4>search</h4>
             <svg class="icon" height="18" viewBox="0 0 24 24" width="18" role="presentation">
-              <use xlink:href="#search"></use>
+              <use xlink:href="#search-icon"></use>
             </svg>
           </div>
         </div>

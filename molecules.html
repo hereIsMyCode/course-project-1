@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="assets/css/styleguide.css">
 </head>
 <body>
+
   <!-- Sgvs section -->
     <svg style="display:none;">
       <defs>
@@ -39,7 +40,7 @@
         <symbol id="menu">
           <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
         </symbol>
-        <symbol id="search">
+        <symbol id="search-icon">
           <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
         </symbol>
       </defs>
@@ -54,12 +55,10 @@
             <a href="/"><span><em>My</em> Bucket List - Style Guide</span></a>
           </div>
           <nav>
-            <ul>
-              <div class="global-nav">
+            <ul class="global-nav">
                 <li><a class="link--header" href="index.html">Atoms</a></li>
                 <li><a class="link--header" href="Molecules.html">Molecules</a></li>
                 <li><a class="link--header" href="Organisms.html">Organisms</a></li>
-              </div>
             </ul>
           </nav>
       </div>
@@ -71,29 +70,27 @@
     <div class="content-wrapper">
       <h1>Molecules</h1>
 
-      <!-- Onpage navigation -->
-      <section>
-        <aside>
+      <!-- Local navigation -->
+      <nav>
           <ul>
             <li><a class="link--main" href="#glob-nav">1. Global navigation</a></li>
             <li><a class="link--main" href="#loc-nav">2. Local navigation</a></li>
-              <li><a class="link--main" href="#Goal-copyright">3. Goal copyright</a></li>
+            <li><a class="link--main" href="#avatars_text">3. Avatars with text</a></li>
             <li><a class="link--main" href="#search">4. Search</a></li>
             <li><a class="link--main" href="#comment">5. Comment</a></li>
-            <li><a class="link--main" href="#card">6. Card</a></li>
-            <li><a class="link--main" href="#log-in">7. Log in</a></li>
+            <li><a class="link--main" href="#cards">6. Cards</a></li>
+            <li><a class="link--main" href="#forms">7. Forms</a></li>
 
           </ul>
-        </aside>
-      </section>
+      </nav>
 
       <!-- Section Primary navigation -->
       <section id="glob-nav">
         <h2>01. Global navigation</h2>
-        <div class="glob-nav">
+        <div class="global-nav">
           <div>
             <h4>Logged out</h4>
-            <div class="glob-nav-box">
+            <div class="global-nav-box">
               <nav>
                 <ul class="global-nav">
                   <li><a class="link--header" href="#prim-nav">Inspiration</a></li>
@@ -105,12 +102,12 @@
           </div>
           <div>
             <h4>Logged in</h4>
-            <div class="glob-nav-box">
+            <div class="global-nav-box">
               <nav>
                 <ul class="global-nav">
                   <li><a class="link--header" href="#prim-nav">My goals</a></li>
                   <li><a class="link--header" href="#prim-nav">Inspiration</a></li>
-                  <li><a class="link--header" href="#prim-nav"><img class="avatar__picture" src="assets/images/avatar.jpg" /></a></li>
+                  <li><a class="link--header" href="#prim-nav"><img class="avatar__picture" src="assets/images/avatar.jpg" alt="picture of avatar" /></a></li>
                 </ul>
               </nav>
             </div>
@@ -129,14 +126,21 @@
             </ul>
           </nav>
         </div>
-
       </section>
 
-      <section id="goal-copyright">
-        <h2>03. Goal copyright</h2>
+      <!-- Section Avatars with text -->
+      <section id="avatars_text">
+        <h2>03. Avatars with text</h2>
         <div class="goal-copyright">
-          <a class="link--header" href="#prim-nav"><img class="avatar__picture" src="assets/images/avatar.jpg" /></a>
-          <p>Created by<em> Nikolai FIscher</em></p>
+          <a class="link--header" href="#prim-nav"><img class="avatar__picture" src="assets/images/avatar.jpg" alt="picture of avatar"/></a>
+          <span>Created by<em> Nikolai Fischer</em></span>
+        </div>
+        <div class="followers">
+          <a class="link--header" href="#prim-nav"><img class="avatar__picture" src="assets/images/avatar.jpg" alt="picture of avatar"/></a>
+          <div>
+            <a class="link--main">Susi Hinterriggenbach</a><br>
+            <span>2 Goals</span>
+          </div>
         </div>
       </section>
 
@@ -150,7 +154,6 @@
             <button class="btn btn--cta" type="submit">Search</button>
           </div>
         </form>
-
       </section>
 
       <!-- Section form elements -->
@@ -158,7 +161,7 @@
         <h2>05. Comment</h2>
         <h4>Comment made</h4>
         <div class="comment-box__made">
-          <img class="avatar__picture" src="assets/images/avatar.jpg" />
+          <img class="avatar__picture" src="assets/images/avatar.jpg" alt="picture of avatar" />
           <div class="comment-text">
             <p><em>Nikolai Fischer</em><em> 1 month ago</em></p>
             <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
@@ -166,20 +169,20 @@
         </div>
         <h4>New comment</h4>
         <div class="comment-box__add">
-          <img class="avatar__picture" src="assets/images/avatar.jpg" />
+          <img class="avatar__picture" src="assets/images/avatar.jpg" alt="picture of avatar" />
           <div class="comment-input">
             <form class="input-group" action="???" method="get">
               <label class="input-group__label" for="input-textarea">Add a comment</label>
-              <textarea class="input-group__field" id="input-textarea" name="commentbox" type="text" rows="4" cols="150"></textarea>
+              <textarea class="input-group__field" id="input-textarea" name="commentbox" rows="4" cols="100"></textarea>
               <button class="btn btn--cta">Post</button>
             </form>
           </div>
         </div>
       </section>
 
-
-      <section id="card">
-        <h2>06. Card</h2>
+      <!-- Section Cards -->
+      <section id="cards">
+        <h2>06. Cards</h2>
         <ul class="bare-list cards">
           <li class="card">
             <a class="card__thumb" href="ideas/see-the-norther-lights.html">
@@ -188,7 +191,7 @@
                         assets/images/northern-lights-large.jpg 600w"/>
             <div class="card__intro">
               <h3 class="card__title">See the norther lights</h3>
-              <span>1254 people are doing this<span/>
+              <span>1254 people are doing this</span>
             </div>
             </a>
             <form class="card__footer" action="idea" method="post">
@@ -199,7 +202,7 @@
                 Like
               </button>
               <button class="btn btn--add" type="submit" name="action" value="addGoal">
-                <svg class="icon" height="18" viewBox="0 0 24 24" width="18" role="presentation"> //no added value only for presentation purpose (screenreaders)
+                <svg class="icon" height="18" viewBox="0 0 24 24" width="18" role="presentation">
                   <use xlink:href="#delete"></use>
                 </svg>
                 Remove
@@ -213,7 +216,7 @@
                         assets/images/northern-lights-large.jpg 600w"/>
             <div class="card__intro">
               <h3 class="card__title">See the norther lights</h3>
-              <span>1254 people are doing this<span/>
+              <span>1254 people are doing this</span>
             </div>
             </a>
             <form class="card__footer" action="idea" method="post">
@@ -228,9 +231,11 @@
         </ul>
       </section>
 
-      <section id="log-in">
-        <h2>07. Log in</h2>
+      <!-- Section forms -->
+      <section id="forms">
+        <h2>07. Forms</h2>
         <div class="forms">
+          <h4>Log in</h4>
           <form class="sign-in" action="sign-in" method="post">
             <div class="input__alert">
               <span></span>
@@ -261,18 +266,18 @@
               <span>Incorrect email/password combination</span>
             </div>
             <div class="input-group">
-              <label for="email" class="input-group__label">Email</label>
-              <input id="email" class="input-group__field input-group__field--alert" type="email" name="email" placeholder="e.g. diana.prince@wonder.wmn">
+              <label for="email2" class="input-group__label">Email</label>
+              <input id="email2" class="input-group__field input-group__field--alert" type="email" name="email" placeholder="e.g. diana.prince@wonder.wmn">
             </div>
             <div class="input-group">
-              <label for="password" class="input-group__label">Password</label>
-              <input id="password" class="input-group__field input-group__field--alert" type="password" name="password">
+              <label for="password2" class="input-group__label">Password</label>
+              <input id="password2" class="input-group__field input-group__field--alert" type="password" name="password">
             </div>
             <div class="input-group input__checkbox">
               <div class="checkbox_container">
-                <input class="checkbox" id="remember-password" type="checkbox" />
+                <input class="checkbox" id="remember-password2" type="checkbox" />
                 <span class="checkmark"></span>
-                <label for="remember-password">Remember me</label>
+                <label for="remember-password2">Remember me</label>
               </div>
               <a class="link--main" href="forgot-password.html">Forgot password?</a>
             </div>
@@ -280,10 +285,35 @@
               <button class="input__button btn btn--cta" type="submit">Log in</button>
             </div>
           </form>
+          <h4>Create Goal</h4>
+          <form class="creat-goal" action="creat-goal" method="post">
+            <div class="alert alert--wide">
+            </div>
+            <div class="input-group">
+              <label class="input-group__label" for="goal-title">Title</label>
+              <input id="goal-title" class="input-group__field" type="text" name="goal-title" placeholder="E.g. ride a camel" />
+            </div>
+            <div class="input-group">
+              <label class="input-group__label" for="goal-image">Add an image</label>
+              <label class="btn input-group__label input-group__file-label" for="goal-image">Image</label>
+              <input id="goal-image" class="input-group__field input-group__file" type="file" name="goal-image" />
+              <span class="input__explanation">Your image will be displayed at a 4:3 aspect ration, cropped if necessary. 5MB limit</span>
+            </div>
+            <div class="input-group">
+              <label class="input-group__label" for="goal-tags">Add tags</label>
+              <input id="goal-tags" class="input-group__field" type="text" name="goal-tags" placeholder="Separate multiple tags with commas" />
+            </div>
+            <div class="input-group">
+              <label class="input-group__label" for="goal-description">Description</label>
+              <textarea id="goal-description" class="input-group__field" maxlength="500" placeholder="Optional. 500 characters max"></textarea>
+            </div>
+            <div class="input-group promt">
+              <a class="prompt__cancel input-group__label" href="/.html">Cancel</a>
+              <button class="btn btn--cta input__button--promt" type="submit">Creat Goal</button> <!--  these are three classes for styling-->
+            </div>
+          </form>
         </div>
       </section>
-
-
     </div>
 </main>
 

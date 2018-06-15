@@ -1,0 +1,74 @@
+
+/* ================================
+ * ORGANISM: GOAL
+ * ================================ */
+
+.goal {
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  border-bottom: 1px solid $grey-3;
+
+  h2 {
+    margin-bottom: $pulse1;
+  }
+
+  .picture-box img {
+   width: 100%;
+   margin-bottom: $pulse1;
+  }
+
+  .goal-copyright {
+    margin-bottom: ($pulse1/4);
+  }
+
+  .likes-doing {
+    color: $grey-3;
+    display: inline-block;
+    margin-bottom: $pulse2;
+  }
+
+  .button-box {
+    display: flex;
+  }
+
+  .btn {
+    min-width: ($pulse1 * 8);
+    margin-right: $pulse1;
+    padding: 1em;
+    font-size: 1rem;
+    flex: 1 1 10em;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  .btn--secondary {
+    margin-bottom: $pulse3;
+  }
+}
+
+/*Display Orgnism: Goal Section in two columns for desktop computers */
+@include desktop {
+  .goal {
+    font-size: 0.8rem;
+    display: inline-block;
+
+    .title-box {
+      float: right;
+      width: calc(50% - #{$pulse1});
+      height: ($pulse1 * 8);
+    }
+
+    .picture-box {
+      float: left;
+      width: calc(50% - #{$pulse1});
+    }
+
+    .text-box {
+      float: right;
+      width: calc(50% - #{$pulse1});
+    }
+  }
+}

@@ -1,0 +1,70 @@
+
+/* ================================
+ * ATOMS: Typography
+ * ================================ */
+
+header, article, section {
+  margin-bottom: $pulse4;
+}
+
+p, ul, ol, span {
+  font-size: $base-font-size;
+}
+
+h1, h2, h3, h4, h5, h6
+.alpha, .beta, .gamma, .delta, .epsilon, .zeta {
+  margin-bottom: $pulse1;
+  padding: 0;
+  font-weight: normal;
+}
+
+h1,
+.alpha {
+  font-size: 4.8em; // style guide says 48px. with html standard size changed to 10px
+  line-height: 1.2; // instead of 1.6 as in html
+  color: $black;
+  margin-bottom: $pulse3;
+  @include tablet {
+      font-size: 4em;
+  }
+  @include desktop {
+      font-size: 4.8em;
+  }
+}
+
+h2,
+.beta {
+  font-size: 3.6em;
+  line-height: 1.2;
+  color: $black;
+  margin-bottom: $pulse3;
+}
+
+h3,
+.gamma {
+  font-size: 2.8em;
+  line-height: 1.2;
+  color: $black;
+}
+
+h4,
+.delta {
+  font-size: 1.3em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  margin: $pulse2 0;
+}
+
+h5,
+.epsilon {
+  font-size: $base-font-size;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+.action-button {
+  font-size: 1.3em;
+  line-height: 1;
+  text-transform: uppercase;
+  color: $black;
+}

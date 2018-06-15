@@ -1,0 +1,72 @@
+
+/* ================================
+ * ATOMS: Buttons
+ * ================================ */
+
+.btn {
+  font-size: 1.3rem;
+  background: $white;
+  color: $black;
+
+  padding: 1.6em;
+  margin: 0;
+
+  border: 1px solid $grey-4;
+  border-radius: 3px;
+
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    background-color: $grey-4;
+    color: $blue;
+  }
+ }
+
+.btn--cta {
+  background-color: $blue;
+  color: $white;
+  border: 1px solid $blue;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($blue, 20);
+    border-color: darken($blue, 15);
+    color: $white;
+  }
+ }
+
+.btn--warning {
+  background-color: $red;
+  color: $white;
+  border: 1px solid $red;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: darken($red, 15);
+    border-color: darken($red, 15);
+    color: $white;
+  }
+}
+
+.btn--secondary {
+  background-color: $grey-4;
+  color: $grey-1;
+  border: 1px solid $grey-4;
+  padding: 1em;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $blue;
+    border-color: $blue;
+    color: $white;
+  }
+}

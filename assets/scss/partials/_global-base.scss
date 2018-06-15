@@ -1,0 +1,16 @@
+/* ================================
+ * GLOBAL: Base
+ * ================================ */
+
+html {
+  font-family: "Rubik", helvetica, arial, sans-serif;
+  font-size: 62.5%; // standard size 16px; 62.5% of 16px = 10px (easier for styling)
+  line-height: $base-line-height; // according to style guide paragraph element
+  background-color: $white;
+}
+
+body {
+  color: $grey-1;
+  margin: 0;
+  padding: 0;
+}

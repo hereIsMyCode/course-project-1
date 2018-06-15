@@ -1,0 +1,98 @@
+
+/* ================================
+ * MOLECULES: Card
+ * =============================== */
+
+.card {
+  box-shadow: 0 0 20px rgba(0,0,0,0.14);
+  margin: 0 1.6rem  1.6rem 0;
+  border-radius: 3px;
+
+  display: flex;
+  flex-direction: column; //in order to make the like add buttons stick at the end of the cards...
+  justify-content: space-between; //in order to make space between the two flex elements in the containter (picture and footer)??
+
+  font-size: 1rem;
+}
+
+.card__thumb {
+  position: relative; //in combination with .card__intro position absolute so the text is on the picture
+  text-decoration: none;
+  color: $white;
+  display: block;
+}
+
+.card__intro {
+  padding: 1.6em;
+  position: absolute;
+  bottom: 0; //stack to bottom, left and right, this makes the element stretch to full with...
+  left: 0;
+  right: 0;
+}
+
+.card__title {
+  font-size: 2em;
+  color: $white;
+}
+
+.card__intro span {
+  font-size: 1.3em;
+}
+
+.card__thumb img {
+  width: 100%;
+  display: block; //this removes the tiny gap between the images and the two buttons because images are inline elements with this gap underneath
+}
+
+.cards::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* --------------------------------
+ * Card footer w/buttons
+ * -------------------------------*/
+
+.card__footer {
+  display: flex;
+  border-top: 1px solid $grey-3;
+ }
+
+.card__footer .btn { //rather than creating a new class I target all buttons in the card footer, they only exist there...
+  border: none;
+  border-radius: 0;
+   }
+
+.card__footer .btn--like {
+  border-right: 1px solid $grey-3;
+  flex: 1 0 auto;
+  text-align: left;
+}
+
+/* --------------------------------
+ * Card RWD layout / grid
+ * -------------------------------*/
+
+.cards {
+  display: flex; //in order that all cards have the same hight...the actual "stretch-property can be left out because it is default setting"
+  flex-wrap: wrap;
+}
+
+/* Tablets */
+@include tablet {
+  .cards {
+    margin-right: -$pulse1;
+  }
+  .cards .card {
+    float: left;
+    width: calc(50% - #{$pulse1}); // direct calculation there is a margin of $pulse1 in .card
+  }
+}
+
+/* Desktops */
+@include desktop {
+  .cards .card {
+    width: calc(25% - #{$pulse1});
+  }
+}

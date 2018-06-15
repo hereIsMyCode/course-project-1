@@ -1,0 +1,41 @@
+
+/* ================================
+ * ORGANISM: BANNER
+ * ================================ */
+
+ .banner_styleguide {
+  margin-bottom: $pulse3;
+  border-bottom: 1px solid $grey-3;
+
+  ul {
+    display: flex;
+    align-items: center;
+  }
+
+  .content_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: $pulse1;
+  }
+
+  .logo {
+   float: left;
+   margin-right: 1.6em;
+  }
+
+  .search {
+    float: left;
+    margin: 0 1.6em -1px 0;
+    flex: 1 0 10em;
+  }
+
+  .input__row {
+    flex: 1 0 20em;
+  }
+
+  .input-group__field {
+    min-width: 10em;
+  }
+ }

@@ -1,0 +1,15 @@
+
+/* ================================
+ * ORGANISM: Followers
+ * ================================ */
+
+.followers-line {
+  display: flex;
+  justify-content: space-between;
+  padding: $pulse1 0;
+  border-bottom: 1px solid $grey-3;
+
+  .btn {
+    width: 10em;
+  }
+}

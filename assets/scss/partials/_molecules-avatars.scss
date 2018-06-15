@@ -1,0 +1,50 @@
+
+ /* ================================
+  * ATOMS & MOLECULES: Avatars (with text)
+  * ================================ */
+
+ .avatar__picture {
+   height: 6em;
+   border-radius: 100%;
+ }
+
+ .avatar__sgv {
+   fill: $blue;
+   height: 6em;
+ }
+
+/* --------------------------------
+ * Avatars with text
+ * -------------------------------*/
+
+.goal-copyright {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  margin-bottom: $pulse1;
+
+  em {
+    font-style: normal;
+    color: $black;
+  }
+}
+
+.goal-copyright img, .followers img, .followers svg  {
+  width: 4.5rem;
+  height: 4.5rem;
+  margin-right: $pulse1;
+}
+
+.followers {
+  display: flex;
+  align-items: center;
+
+  a {
+    font-size: $base-font-size;
+    margin-bottom: ($pulse1/10)
+  }
+
+  span{
+    color: $grey-3;
+  }
+}

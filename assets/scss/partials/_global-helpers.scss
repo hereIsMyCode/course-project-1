@@ -1,0 +1,32 @@
+
+/* ================================
+ * GLOBAL: Helpers
+ * ================================ */
+
+.content-wrapper {
+  max-width: 96em;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.content-wrapper::after { // this is added to ensure that line remains when we float search and nav elements
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.bare-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sr-only { //Hide the element visually but show it for screenreaders (sr)
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect (0,0,0,0);
+  border: 0;
+}

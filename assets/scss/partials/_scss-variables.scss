@@ -1,0 +1,22 @@
+/* ================================
+ * SCSS: Variables
+ * ================================ */
+
+// variables colors
+$black: #192127;
+$blue: #2C9CF2;
+$red: #E25D43;
+$white: #fff;
+$grey-1: #72797e; // Darkest grey
+$grey-2: #afbac4;
+$grey-3: #bbc1c6;
+$grey-4: #e3e5e9;
+$grey-5: #f7f9fc; // Lightest gray
+
+// Sizes
+$base-line-height: 1.6;
+$base-font-size: 1.5em;
+$pulse1: $base-line-height * 1rem;
+$pulse2: $base-line-height * 2rem;
+$pulse3: $base-line-height * 3rem;
+$pulse4: $base-line-height * 4rem;

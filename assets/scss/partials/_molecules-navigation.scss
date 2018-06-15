@@ -1,0 +1,48 @@
+
+/* ================================
+ *  MOLECULES: Navigation
+ * ================================ */
+
+ /* --------------------------------
+  * Navigation - Global navigation
+  * -------------------------------*/
+
+ .global-nav-box ul {
+    display: flex;
+    align-items: center;
+    height: 3em;
+    min-width: ($pulse1 * 20);
+    margin-right: $pulse2;
+  }
+
+.global-nav {
+  li {
+    display: inline-block;
+    margin-left: $pulse2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
+  img {
+     width: 3em;
+     height: 3em;
+   }
+}
+
+/* --------------------------------
+ * Navigation - Local navigation
+ * -------------------------------*/
+
+ .loc-nav {
+  padding-bottom: $pulse2;
+  border-bottom: 1px solid $grey-2;
+
+  & a:active,
+  & a:hover {
+   color: $black;
+   padding-bottom: ($pulse1 * 3.1);
+   border-bottom: 2px solid $black;
+ }
+}

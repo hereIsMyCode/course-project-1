@@ -1,0 +1,40 @@
+
+/* ================================
+ * ORGANISM: Footer
+ * =============================== */
+
+.global-footer {
+  background: $black;
+  color: $grey-3;
+  padding: 4.8rem 0 4.8rem;
+  margin-bottom: 0;
+
+  .logo {
+    flex: 1 0 auto;
+  }
+
+  a {
+    color: inherit;
+  }
+
+  .content-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  .meta-nav {
+    float: left;
+    font-size: $base-font-size;
+    flex: 6 1 auto;
+
+    a {
+      margin-right: $pulse1;
+    }
+
+    a:first-child {
+       margin-left: $pulse1;
+    }
+  }
+}

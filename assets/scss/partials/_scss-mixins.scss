@@ -1,0 +1,15 @@
+/* ================================
+ * SCSS: Mixins
+ * ================================ */
+
+@mixin tablet {
+  @media screen and (min-width: 480px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media screen and (min-width: 800px) {
+    @content;
+  }
+}
