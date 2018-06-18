@@ -4,8 +4,18 @@
  * ================================ */
 
 .goal {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   font-size: 1rem;
   border-bottom: 1px solid $grey-3;
 
@@ -29,6 +39,10 @@
   }
 
   .button-box {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
     display: flex;
   }
 
@@ -37,7 +51,11 @@
     margin-right: $pulse1;
     padding: 1em;
     font-size: 1rem;
-    flex: 1 1 10em;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 10em;
+       -moz-box-flex: 1;
+        -ms-flex: 1 1 10em;
+            flex: 1 1 10em;
 
     &:last-child {
       margin-right: 0;
@@ -57,17 +75,23 @@
 
     .title-box {
       float: right;
+      width: -webkit-calc(50% - #{$pulse1});
+      width: -moz-calc(50% - #{$pulse1});
       width: calc(50% - #{$pulse1});
       height: ($pulse1 * 8);
     }
 
     .picture-box {
       float: left;
+      width: -webkit-calc(50% - #{$pulse1});
+      width: -moz-calc(50% - #{$pulse1});
       width: calc(50% - #{$pulse1});
     }
 
     .text-box {
       float: right;
+      width: -webkit-calc(50% - #{$pulse1});
+      width: -moz-calc(50% - #{$pulse1});
       width: calc(50% - #{$pulse1});
     }
   }

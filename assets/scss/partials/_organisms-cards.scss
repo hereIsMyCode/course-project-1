@@ -4,12 +4,30 @@
  * =============================== */
 
 .card {
-  box-shadow: 0 0 20px rgba(0,0,0,0.14);
+  -webkit-box-shadow: 0 0 20px rgba(0,0,0,0.14);
+     -moz-box-shadow: 0 0 20px rgba(0,0,0,0.14);
+          box-shadow: 0 0 20px rgba(0,0,0,0.14);
   margin: 0 1.6rem  1.6rem 0;
-  border-radius: 3px;
+  -webkit-border-radius: 3px;
+     -moz-border-radius: 3px;
+          border-radius: 3px;
+
+  display: -webkit-box;
+
+  display: -webkit-flex;
+
+  display: -moz-box;
+
+  display: -ms-flexbox;
 
   display: flex;
-  flex-direction: column; //in order to make the like add buttons stick at the end of the cards...
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+     -moz-box-orient: vertical;
+     -moz-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column; //in order to make the like add buttons stick at the end of the cards...
   justify-content: space-between; //in order to make space between the two flex elements in the containter (picture and footer)??
 
   font-size: 1rem;
@@ -55,18 +73,28 @@
  * -------------------------------*/
 
 .card__footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex;
   border-top: 1px solid $grey-3;
  }
 
 .card__footer .btn { //rather than creating a new class I target all buttons in the card footer, they only exist there...
   border: none;
-  border-radius: 0;
+  -webkit-border-radius: 0;
+     -moz-border-radius: 0;
+          border-radius: 0;
    }
 
 .card__footer .btn--like {
   border-right: 1px solid $grey-3;
-  flex: 1 0 auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+     -moz-box-flex: 1;
+      -ms-flex: 1 0 auto;
+          flex: 1 0 auto;
   text-align: left;
 }
 
@@ -75,6 +103,10 @@
  * -------------------------------*/
 
 .cards {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
   display: flex; //in order that all cards have the same hight...the actual "stretch-property can be left out because it is default setting"
   flex-wrap: wrap;
 }
@@ -86,6 +118,8 @@
   }
   .cards .card {
     float: left;
+    width: -webkit-calc(50% - #{$pulse1});
+    width: -moz-calc(50% - #{$pulse1});
     width: calc(50% - #{$pulse1}); // direct calculation there is a margin of $pulse1 in .card
   }
 }
@@ -93,6 +127,8 @@
 /* Desktops */
 @include desktop {
   .cards .card {
+    width: -webkit-calc(25% - #{$pulse1});
+    width: -moz-calc(25% - #{$pulse1});
     width: calc(25% - #{$pulse1});
   }
 }
